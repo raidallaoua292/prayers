@@ -2,8 +2,6 @@
 import { useState} from 'react'
 import axios from 'axios';
 import { ReactSearchAutocomplete } from 'react-search-autocomplete';
-import { defaultFuseOptions } from 'react-search-autocomplete/dist/config/config';
-
 export default function LoctionSearch({handelChange}: {handelChange: (dispName: string, apiName:string, countryCode:string) => void}) {
 
     type City = {
