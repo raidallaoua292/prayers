@@ -39,7 +39,7 @@ export default function MainContent() {
     const [timer, setTimer] = useState('')
     
     useEffect(() => {
-        axios.get(`http://api.aladhan.com/v1/timingsByCity?city=${city.apiName}&country=${city.country}&method=8`)
+        axios.get(`https://api.aladhan.com/v1/timingsByCity?city=${city.apiName}&country=${city.country}&method=8`)
             .then((res) => {
                 // const prayer(res.data.data.timings)
                 setTimings(timings.map((timing) => {
@@ -72,7 +72,6 @@ export default function MainContent() {
         setNextPrayerIndex(getNextPrayerIndex(momentNow, timings));
         
         // now after knowing what the next prayer is, we can setup the countdown timer by getting the prayer's time
-        // and subtracting it from the current time
         let remrimingTime = moment(timings[nextPrayerIndex].time, 'HH:mm').diff(momentNow)
         console.log(remrimingTime)
 
